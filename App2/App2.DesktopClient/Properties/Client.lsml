@@ -40,9 +40,6 @@
     <ApplicationCommand
       Name="ScreenCommandShowEditableClientGrid"
       Target="!module/Methods[ShowEditableClientGrid]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowГорода"
-      Target="!module/Methods[ShowГорода]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -55,9 +52,6 @@
       <ApplicationNavigationLink
         Name="EditableClientGrid"
         Command="!module/Commands[ScreenCommandShowEditableClientGrid]" />
-      <ApplicationNavigationLink
-        Name="Города"
-        Command="!module/Commands[ScreenCommandShowГорода]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration"

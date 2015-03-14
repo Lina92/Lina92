@@ -240,11 +240,8 @@
     <ClientResource Include="Properties\Config.xml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\EditableClientGrid.lsml" />
-    <LightSwitchModel Include="Screens\Города.lsml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserCode\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
       <SubFolder>

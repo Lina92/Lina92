@@ -13,20 +13,8 @@ namespace LightSwitchApplication
     {
         partial void Method_Execute()
         {
-                    partial void CreateNewCustomerItem_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
-        {
             // Добавьте сюда свой код.
-            this.CustomerItemProperty = new CustomerItem();
-        }
 
-        partial void CreateNewCustomerItem_Saved()
-        {
-            // Добавьте сюда свой код.
-            this.Close(false);
-            Application.Current.ShowDefaultScreen(this.CustomerItemProperty);
         }
     }
 }
-
-
-  
