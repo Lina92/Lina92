@@ -76,6 +76,21 @@
             Value="10" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="Client__Schedule_trainer"
+        Association="FK_Client__Schedule_trainer_Client"
+        FromEnd="Client"
+        ToEnd="Client__Schedule_trainer" />
+      <NavigationProperty
+        Name="Client_Line"
+        Association="FK_Client_Line_Client"
+        FromEnd="Client"
+        ToEnd="Client_Line" />
+      <NavigationProperty
+        Name="ClubCard"
+        Association="FK_ClubCard_Client"
+        FromEnd="Client"
+        ToEnd="ClubCard" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -169,7 +184,82 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Client__Schedule_trainer_Client"
+      Association="FK_Client__Schedule_trainer_Client">
+      <AssociationSetEnd
+        Name="Client"
+        EntitySet="Client" />
+      <AssociationSetEnd
+        Name="Client__Schedule_trainer"
+        EntitySet="Client__Schedule_trainer" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Client_Line_Client"
+      Association="FK_Client_Line_Client">
+      <AssociationSetEnd
+        Name="Client"
+        EntitySet="Client" />
+      <AssociationSetEnd
+        Name="Client_Line"
+        EntitySet="Client_Line" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_ClubCard_Client"
+      Association="FK_ClubCard_Client">
+      <AssociationSetEnd
+        Name="Client"
+        EntitySet="Client" />
+      <AssociationSetEnd
+        Name="ClubCard"
+        EntitySet="ClubCard" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_Client__Schedule_trainer_Client">
+    <AssociationEnd
+      Name="Client"
+      Multiplicity="One"
+      EntityType="ClientItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Client__Schedule_trainer"
+      Multiplicity="Many"
+      EntityType="Client__Schedule_trainerItem" />
+  </Association>
+  <Association
+    Name="FK_Client_Line_Client">
+    <AssociationEnd
+      Name="Client"
+      Multiplicity="One"
+      EntityType="ClientItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Client_Line"
+      Multiplicity="Many"
+      EntityType="Client_LineItem" />
+  </Association>
+  <Association
+    Name="FK_ClubCard_Client">
+    <AssociationEnd
+      Name="Client"
+      Multiplicity="One"
+      EntityType="ClientItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ClubCard"
+      Multiplicity="Many"
+      EntityType="ClubCardItem" />
+  </Association>
   <DataService
     Name="FitnesDataDataService">
     <DataService.Attributes>
@@ -218,5 +308,68 @@
           Property="ClientItem/Properties[city]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Client__Schedule_trainer_Client">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Client- Schedule_trainer_Client" />
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_Client__Schedule_trainer_Client]/Members[Client]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_Client__Schedule_trainer_Client]/Members[Client__Schedule_trainer]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Client_Line_Client">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Client-Line_Client" />
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_Client_Line_Client]/Members[Client]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_Client_Line_Client]/Members[Client_Line]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ClubCard_Client">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ClubCard_Client" />
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_ClubCard_Client]/Members[Client]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="FitnesData/Members[FK_ClubCard_Client]/Members[ClubCard]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IDClient" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

@@ -202,6 +202,19 @@
     <Content Include="Web.config" />
     <LightSwitchModel Include="DataSources\FitnesData\Client.lsml" />
     <LightSwitchModel Include="Properties\DataSources\FitnesData.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Client__Schedule_trainer.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Client_Line.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\ClubCard.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Course.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Gym.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Gym__Course.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Line.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Period.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Price.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Schedule_trainer.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Trainer.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\Trainer__Course.lsml" />
+    <LightSwitchModel Include="DataSources\FitnesData\View_visits.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
