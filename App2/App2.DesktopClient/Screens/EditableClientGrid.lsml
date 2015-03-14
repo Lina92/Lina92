@@ -40,6 +40,19 @@
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
+                Name="Foto"
+                Kind="Value"
+                DataType="Microsoft.LightSwitch.Extensions:Image">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ClientItem/Properties[Foto]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
                 Name="FName"
                 Kind="Value"
                 DataType=":String">

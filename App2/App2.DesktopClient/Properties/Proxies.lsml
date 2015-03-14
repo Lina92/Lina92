@@ -4,12 +4,6 @@
   <Application.Attributes>
     <Partial />
   </Application.Attributes>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:ClientItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <EntityContainer>
     <EntityContainer.Attributes>
       <Proxy
