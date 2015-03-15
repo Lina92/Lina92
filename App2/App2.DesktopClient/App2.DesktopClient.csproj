@@ -247,6 +247,7 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\EditableClientGrid.lsml" />
     <LightSwitchModel Include="Screens\ClubCardItemDetail.lsml" />
+    <LightSwitchModel Include="Screens\CreateNew.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
