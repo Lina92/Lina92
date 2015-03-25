@@ -40,9 +40,6 @@
     <ApplicationCommand
       Name="ScreenCommandShowEditableClientGrid"
       Target="!module/Methods[ShowEditableClientGrid]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowCreateNew"
-      Target="!module/Methods[ShowCreateNew]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -56,8 +53,8 @@
         Name="EditableClientGrid"
         Command="!module/Commands[ScreenCommandShowEditableClientGrid]" />
       <ApplicationNavigationLink
-        Name="CreateNew"
-        Command="!module/Commands[ScreenCommandShowCreateNew]" />
+        Name="link"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration"

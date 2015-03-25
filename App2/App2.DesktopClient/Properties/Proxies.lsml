@@ -25,12 +25,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:CourseItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:GymItem" />
     </EntityType.Attributes>
   </EntityType>
@@ -56,12 +50,6 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:PriceItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Schedule_trainerItem" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>

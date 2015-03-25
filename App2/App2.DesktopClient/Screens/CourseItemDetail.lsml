@@ -5,8 +5,11 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="CreateNew"
-    LaunchMode="Multiple">
+    Name="CourseItemDetail">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="FitnesData" />
+    </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
         Name="RootContentItem"
@@ -15,6 +18,44 @@
         <ContentItem
           Name="ScreenLayout"
           Kind="Group">
+          <ContentItem
+            Name="details"
+            Kind="Details"
+            DataType="CourseItem">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="CourseItemDetail/Properties[CourseItem]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="NameCourse"
+              Kind="Value"
+              DataType=":String">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="CourseItem/Properties[NameCourse]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Top"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
           <ContentItem.PropertySources>
             <ControlPropertySource
               Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
@@ -36,7 +77,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNew/Methods[Save]" />
+                    Target="CourseItemDetail/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -48,7 +89,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNew/Methods[Refresh]" />
+                    Target="CourseItemDetail/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -86,14 +127,44 @@
         </ScreenMethod.Attributes>
       </ScreenMethod>
     </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="CourseItem"
+        PropertyType="CourseItem">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="LightSwitchApplication.App2.DesktopClient:FitnesData/Members[Course_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="IDCour">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="CourseItemDetail/Properties[CourseItemIDCour]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="CourseItemIDCour"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+    </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowCreateNew">
+      Name="ShowCourseItemDetail">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="CreateNew" />
+          TargetScreen="CourseItemDetail" />
       </ApplicationMethod.Attributes>
+      <ApplicationMethodParameter
+        Name="CourseItemIDCour"
+        ParameterType=":Int32" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>
