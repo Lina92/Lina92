@@ -40,6 +40,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowEditableClientGrid"
       Target="!module/Methods[ShowEditableClientGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditablePriceGrid"
+      Target="!module/Methods[ShowEditablePriceGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowCreateNewSchedule_trainerItem"
+      Target="!module/Methods[ShowCreateNewSchedule_trainerItem]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -55,6 +61,12 @@
       <ApplicationNavigationLink
         Name="link"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+      <ApplicationNavigationLink
+        Name="EditablePriceGrid"
+        Command="!module/Commands[ScreenCommandShowEditablePriceGrid]" />
+      <ApplicationNavigationLink
+        Name="CreateNewSchedule_trainerItem"
+        Command="!module/Commands[ScreenCommandShowCreateNewSchedule_trainerItem]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration"

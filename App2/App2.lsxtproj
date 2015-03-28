@@ -22,12 +22,42 @@
     <ApplicationServerType>LocalHost</ApplicationServerType>
     <AuthenticationType>Windows</AuthenticationType>
     <ApplicationName>App2</ApplicationName>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
     <DefaultLanguage>ru</DefaultLanguage>
     <AllowAllWindowsUsers>false</AllowAllWindowsUsers>
+    <AdministratorFullName />
+    <AdministratorUserName>Lina</AdministratorUserName>
+    <AllowUntrustedCertificate>False</AllowUntrustedCertificate>
+    <DeployDatabase>False</DeployDatabase>
+    <AddAdministrator>False</AddAdministrator>
+    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl />
+    <DefaultInstallLocation>App2</DefaultInstallLocation>
+    <DeploySchema>True</DeploySchema>
+    <PublishNewDatabase>True</PublishNewDatabase>
+    <PublishUrl />
+    <PublishSite>Default Web Site/App2</PublishSite>
+    <RemotePublish>False</RemotePublish>
+    <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
+    <UseLightSwitchWebDeploymentProvider>False</UseLightSwitchWebDeploymentProvider>
+    <AzureAllowUpgrade>True</AzureAllowUpgrade>
+    <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
+    <AzureDeploymentLabel>App2</AzureDeploymentLabel>
+    <AzureWebSite />
+    <AzureWebSpace />
+    <AzureServiceType>WebSite</AzureServiceType>
+    <AzureHostedService />
+    <AzureHostedServiceLabel>Production</AzureHostedServiceLabel>
+    <AzureStorageService />
+    <SslCertificateThumbprint />
+    <PublishServiceOnly>False</PublishServiceOnly>
+    <AzureCredentials />
+    <SharePointServerToServerCertificatePath />
+    <SharePointServerToServerCertificateIssuerId />
+    <RequireSecureConnection>True</RequireSecureConnection>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug</OutputPath>
@@ -123,6 +153,16 @@
       <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
       <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
     </LightSwitchExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Install>True</Install>
+      <Name>.NETFramework,Version=v4.0</Name>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Install>True</Install>
+      <Name>Microsoft.Windows.Installer.4.5</Name>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
 </Project>
